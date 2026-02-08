@@ -1,6 +1,6 @@
 ---
 title: "PS270 Final Project"
-author: "Your Name Here"
+author: Margot Powell
 description: "My final project"
 output:
   distill::distill_article:
@@ -11,4 +11,4 @@ output:
 
 ## Project thoughts
 
-I am interested in exploring data related to...
+I am interested in exploring data related to congress, their poltical parties, the public's perception of the leaders, and the effectiveness of their time in office? Maybe something along the lines of "How does the party affiliation of members of Congress influence the number of bills they successfully sponsor and pass?".
