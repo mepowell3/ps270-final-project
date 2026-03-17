@@ -22,3 +22,25 @@ congress <- read_excel("data/SLES_individual_through_2018.xlsx")
 head(congress)
 ```
 
+## First Graph 
+
+```{r}
+library(tidyverse)
+laws_passed <- congress |>
+  group_by(`1 = majority party`) |>
+  summarize(
+    avg_bills = mean(`Number of bills becoming law`, na.rm = TRUE)
+  )
+ggplot(laws_passed, aes(x = factor(`1 = majority party`), y = avg_bills, fill = factor(`1 = majority party`))) +
+  geom_col()+
+  labs(
+    title = "Bills Passed by Majority vs Minority Party",
+    x = "Party Status",
+    y = "Average Number of Laws Passed",
+    fill = "Party Status"
+  ) +
+  scale_x_discrete(labels = c("0" = "Minority", "1" = "Majority")) +
+  theme_minimal()
+
+```
+
