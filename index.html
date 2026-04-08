@@ -1582,9 +1582,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>laws_passed</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>`1 = majority party`</span><span class='op'>)</span>, y <span class='op'>=</span> <span class='va'>avg_bills</span>, fill <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>`1 = majority party`</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
-<span>    title <span class='op'>=</span> <span class='st'>"Bills Passed by Majority vs Minority Party"</span>,</span>
-<span>    x <span class='op'>=</span> <span class='st'>"Party Status"</span>,</span>
-<span>    y <span class='op'>=</span> <span class='st'>"Average Number of Laws Passed"</span>,</span>
+<span>    title <span class='op'>=</span> <span class='st'>"Legislative Success by Majority-Party Status"</span>,</span>
+<span>    x <span class='op'>=</span> <span class='st'>"Party Status (Majority vs Minority)"</span>,</span>
+<span>    y <span class='op'>=</span> <span class='st'>"Average Number of Bills Becoming Law"</span>,</span>
 <span>    fill <span class='op'>=</span> <span class='st'>"Party Status"</span></span>
 <span>  <span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_discrete.html'>scale_x_discrete</a></span><span class='op'>(</span>labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"0"</span> <span class='op'>=</span> <span class='st'>"Minority"</span>, <span class='st'>"1"</span> <span class='op'>=</span> <span class='st'>"Majority"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
@@ -1592,6 +1592,43 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" alt="" width="624" /></p>
 </div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://broom.tidymodels.org/'>broom</a></span><span class='op'>)</span></span>
+<span><span class='va'>model_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>`Number of bills becoming law`</span> <span class='op'>~</span> <span class='va'>`1 = majority party`</span>, data <span class='op'>=</span> <span class='va'>congress</span><span class='op'>)</span></span>
+<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>model_1</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+</div>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">term</th>
+<th style="text-align: right;">estimate</th>
+<th style="text-align: right;">std.error</th>
+<th style="text-align: right;">statistic</th>
+<th style="text-align: right;">p.value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">2.758345</td>
+<td style="text-align: right;">0.0407300</td>
+<td style="text-align: right;">67.72274</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>1 = majority party</code></td>
+<td style="text-align: right;">2.846698</td>
+<td style="text-align: right;">0.0519762</td>
+<td style="text-align: right;">54.76927</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="write-up-and-analysis">Write Up and Analysis</h3>
+<p>The figure shows that members of the majority party sponsor more bills that become law on average compared to members of the minority party. This pattern is consistent with my hypothesis that institutional advantages, such as agenda control and leadership support, increase legislative success for majority-party members. However, while the difference appears meaningful, further analysis using regression is necessary to determine whether this relationship is statistically significant.</p>
+<p>The regression results show a strong relationship between majority-party status and legislative success. The coefficient on majority-party status is 2.847, which indicates that members of the majority party sponsor approximately 2.85 more bills that become law on average than members of the minority party. This suggests that majority-party membership is associated with substantially greater legislative success. This relationship is statistically significant (p &lt; 0.001), meaning it is highly unlikely to have occurred by chance.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->

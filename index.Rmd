@@ -34,13 +34,25 @@ laws_passed <- congress |>
 ggplot(laws_passed, aes(x = factor(`1 = majority party`), y = avg_bills, fill = factor(`1 = majority party`))) +
   geom_col()+
   labs(
-    title = "Bills Passed by Majority vs Minority Party",
-    x = "Party Status",
-    y = "Average Number of Laws Passed",
+    title = "Legislative Success by Majority-Party Status",
+    x = "Party Status (Majority vs Minority)",
+    y = "Average Number of Bills Becoming Law",
     fill = "Party Status"
   ) +
   scale_x_discrete(labels = c("0" = "Minority", "1" = "Majority")) +
   theme_minimal()
+```
+```{r}
+library(broom)
+model_1 <- lm(`Number of bills becoming law` ~ `1 = majority party`, data = congress)
+knitr::kable(tidy(model_1))
 
 ```
+
+### Write Up and Analysis
+
+The figure shows that members of the majority party sponsor more bills that become law on average compared to members of the minority party. This pattern is consistent with my hypothesis that institutional advantages, such as agenda control and leadership support, increase legislative success for majority-party members. However, while the difference appears meaningful, further analysis using regression is necessary to determine whether this relationship is statistically significant.
+
+The regression results show a strong relationship between majority-party status and legislative success. The coefficient on majority-party status is 2.847, which indicates that members of the majority party sponsor approximately 2.85 more bills that become law on average than members of the minority party. This suggests that majority-party membership is associated with substantially greater legislative success. This relationship is statistically significant (p < 0.001), meaning it is highly unlikely to have occurred by chance.
+
 
