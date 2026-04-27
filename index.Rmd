@@ -101,4 +101,7 @@ However, this analysis has important limitations. Because the data is observatio
 
 Future research could improve this analysis by incorporating additional control variables, such as years in office, to better isolate the effect of majority-party status. Or, we could also explore whether this relationship differs between the House and Senate. Together, these additions would not only strengthen the analysis, but also deepen our understanding of how power operates within Congress.
 
+```{r print-code, ref.label=knitr::all_labels(), echo = TRUE, eval=FALSE}
+
+```
 
