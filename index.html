@@ -89,29 +89,29 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>PS270 Final Project</title>
+  <title>How Majority Status Shapes Lawmaking in Congress</title>
 
-  <meta property="description" itemprop="description" content="My final project"/>
+  <meta property="description" itemprop="description" content="This project examines how majority-party status shapes legislative success in Congress, showing that the  institution of Congress plays a key role in determining which bills become law."/>
 
 
   <meta name="article:author" content="Margot Powell"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="PS270 Final Project"/>
+  <meta property="og:title" content="How Majority Status Shapes Lawmaking in Congress"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="My final project"/>
+  <meta property="og:description" content="This project examines how majority-party status shapes legislative success in Congress, showing that the  institution of Congress plays a key role in determining which bills become law."/>
   <meta property="og:locale" content="en_US"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="PS270 Final Project"/>
-  <meta property="twitter:description" content="My final project"/>
+  <meta property="twitter:title" content="How Majority Status Shapes Lawmaking in Congress"/>
+  <meta property="twitter:description" content="This project examines how majority-party status shapes legislative success in Congress, showing that the  institution of Congress plays a key role in determining which bills become law."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","description","output"]}},"value":[{"type":"character","attributes":{},"value":["PS270 Final Project"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Margot Powell"]}]}]},{"type":"character","attributes":{},"value":["My final project"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","author","description","output"]}},"value":[{"type":"character","attributes":{},"value":["How Majority Status Shapes Lawmaking in Congress"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Margot Powell"]}]}]},{"type":"character","attributes":{},"value":["This project examines how majority-party status shapes legislative success in Congress, showing that the  institution of Congress plays a key role in determining which bills become law."]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   
@@ -1519,7 +1519,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"PS270 Final Project","description":"My final project","authors":[{"author":"Margot Powell","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}]}
+{"title":"How Majority Status Shapes Lawmaking in Congress","description":"This project examines how majority-party status shapes legislative success in Congress, showing that the  institution of Congress plays a key role in determining which bills become law.","authors":[{"author":"Margot Powell","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -1529,11 +1529,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>PS270 Final Project</h1>
+<h1>How Majority Status Shapes Lawmaking in Congress</h1>
 
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p>My final project</p>
+<p>This project examines how majority-party status shapes legislative success in Congress, showing that the institution of Congress plays a key role in determining which bills become law.</p>
 </div>
 
 <div class="d-byline">
@@ -1558,113 +1558,90 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>The <strong>outcome variable</strong> is <strong>legislative success</strong>, measured by the number of bills a member sponsors that successfully move through the legislative process and become law. These outcomes are measured <em>per member per congressional term</em>, allowing for a consistent comparison across individuals.</p>
 <h3 id="criteria-for-hypothesis">Criteria for Hypothesis</h3>
 <p>My hypothesis would be supported if majority-party members, on average, pass significantly more bills per term than minority-party members. It would not be supported if there is no meaningful difference in the number of bills passed between the two groups.</p>
-<h3 id="loading-the-data">Loading the Data</h3>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
-<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://readxl.tidyverse.org'>readxl</a></span><span class='op'>)</span></span>
-<span><span class='va'>congress</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"data/SLES_individual_through_2018.xlsx"</span><span class='op'>)</span></span>
-<span><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>congress</span><span class='op'>)</span></span></code></pre>
-</div>
-<pre><code># A tibble: 6 × 67
-  `State, 2-letter code` Upper or lower chamb…¹ 2-year term being an…²
-  &lt;chr&gt;                  &lt;chr&gt;                  &lt;chr&gt;                 
-1 AK                     lower                  1993_1994             
-2 AK                     lower                  1993_1994             
-3 AK                     lower                  1993_1994             
-4 AK                     lower                  1993_1994             
-5 AK                     lower                  1993_1994             
-6 AK                     lower                  1993_1994             
-# ℹ abbreviated names: ¹​`Upper or lower chamber`,
-#   ²​`2-year term being analyzed`
-# ℹ 64 more variables: `Lawmaker name` &lt;chr&gt;,
-#   `ID number for Lawmaker` &lt;dbl&gt;,
-#   `Year elected into current legislative term` &lt;dbl&gt;,
-#   `District number` &lt;chr&gt;, `Party, including D and R` &lt;chr&gt;,
-#   `1 = majority party` &lt;dbl&gt;, …</code></pre>
-</div>
 <h2 id="results">Results</h2>
 <h3 id="distribution-of-legislation-success">Distribution of Legislation Success</h3>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>congress</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>`Number of bills becoming law`</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span>binwidth <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
-<span>    title <span class='op'>=</span> <span class='st'>"Distribution of Bills Becoming Law"</span>,</span>
-<span>    x <span class='op'>=</span> <span class='st'>"Number of Bills Becoming Law per Member per Term"</span>,</span>
-<span>    y <span class='op'>=</span> <span class='st'>"Count of Members"</span></span>
-<span>  <span class='op'>)</span> </span></code></pre>
-</div>
 <p><img src="index_files/figure-html5/unnamed-chunk-2-1.png" alt="" width="624" /></p>
 </div>
 <h4 id="write-up">Write Up</h4>
 <p>The distribution of the number of bills becoming law per member per congressional term is highly skewed, with most members passing relatively few bills and a small number of members achieving higher levels of success. This suggests that legislative effectiveness is unevenly distributed across members of Congress, with a majority producing limited successful legislation while a smaller group accounts for a larger share of passed bills.</p>
 <h3 id="legislative-success-by-majority-party-status">Legislative Success by Majority-Party Status</h3>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>laws_passed</span> <span class='op'>&lt;-</span> <span class='va'>congress</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>`1 = majority party`</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span></span>
-<span>    avg_bills <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>`Number of bills becoming law`</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></span>
-<span>  <span class='op'>)</span></span>
-<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>laws_passed</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>factor</a></span><span class='op'>(</span><span class='va'>`1 = majority party`</span><span class='op'>)</span>, y <span class='op'>=</span> <span class='va'>avg_bills</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span>fill <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"darkblue"</span>, <span class='st'>"steelblue"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
-<span>    title <span class='op'>=</span> <span class='st'>"Legislative Success by Majority-Party Status"</span>,</span>
-<span>    x <span class='op'>=</span> <span class='st'>"Party Status (Majority vs Minority)"</span>,</span>
-<span>    y <span class='op'>=</span> <span class='st'>"Average Number of Bills Becoming Law per Member per Term"</span>,</span>
-<span>    fill <span class='op'>=</span> <span class='st'>"Party Status"</span></span>
-<span>  <span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_discrete.html'>scale_x_discrete</a></span><span class='op'>(</span>labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"0"</span> <span class='op'>=</span> <span class='st'>"Minority"</span>, <span class='st'>"1"</span> <span class='op'>=</span> <span class='st'>"Majority"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
-</div>
 <p><img src="index_files/figure-html5/unnamed-chunk-3-1.png" alt="" width="624" /></p>
 </div>
 <h4 id="write-up-1">Write Up</h4>
 <p>The figure shows that members of the majority party pass more bills, on average, per congressional term than members of the minority party. This pattern is consistent with my hypothesis that institutional advantages—such as agenda control, leadership support, and access to legislative resources—allow majority-party members to more effectively move legislation through Congress. While the difference appears meaningful, regression analysis is needed to determine the magnitude and statistical significance of this relationship.</p>
 <h3 id="regression">Regression</h3>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://broom.tidymodels.org/'>broom</a></span><span class='op'>)</span></span>
-<span><span class='va'>model_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>`Number of bills becoming law`</span> <span class='op'>~</span> <span class='va'>`1 = majority party`</span>, data <span class='op'>=</span> <span class='va'>congress</span><span class='op'>)</span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>model_1</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
-</div>
-<table>
+<table style="width:49%;">
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 19%" />
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">term</th>
-<th style="text-align: right;">estimate</th>
-<th style="text-align: right;">std.error</th>
-<th style="text-align: right;">statistic</th>
-<th style="text-align: right;">p.value</th>
+<th></th>
+<th><ol type="1">
+<li></li>
+</ol></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">2.758345</td>
-<td style="text-align: right;">0.0407300</td>
-<td style="text-align: right;">67.72274</td>
-<td style="text-align: right;">0</td>
+<td>(Intercept)</td>
+<td>2.758</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><code>1 = majority party</code></td>
-<td style="text-align: right;">2.846698</td>
-<td style="text-align: right;">0.0519762</td>
-<td style="text-align: right;">54.76927</td>
-<td style="text-align: right;">0</td>
+<td></td>
+<td>(0.041)</td>
+</tr>
+<tr class="odd">
+<td>1 = majority party</td>
+<td>2.847</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>(0.052)</td>
+</tr>
+<tr class="odd">
+<td>Num.Obs.</td>
+<td>80344</td>
+</tr>
+<tr class="even">
+<td>R2</td>
+<td>0.036</td>
+</tr>
+<tr class="odd">
+<td>R2 Adj.</td>
+<td>0.036</td>
+</tr>
+<tr class="even">
+<td>AIC</td>
+<td>544596.8</td>
+</tr>
+<tr class="odd">
+<td>BIC</td>
+<td>544624.6</td>
+</tr>
+<tr class="even">
+<td>Log.Lik.</td>
+<td>-272295.384</td>
+</tr>
+<tr class="odd">
+<td>RMSE</td>
+<td>7.17</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h3 id="analysis">Analysis</h3>
+<h3 id="regression-analysis">Regression Analysis</h3>
 <p>The regression results show a strong positive relationship between majority-party status and legislative success. The coefficient on majority-party status is approximately 2.85, which means that majority-party members pass about 2.85 more bills per member per congressional term than minority-party members. This is a meaningful difference and suggests that majority-party membership is associated with greater legislative effectiveness. Additionally, this means that majority-party members have a noticeable advantage in making legislative proposals into actual laws, proving the importance of your position in shaping policy outcomes.</p>
 <p>The estimated effect is statistically significant (p &lt; 0.001), indicating that the relationship is unlikely to be due to random chance. However, because this analysis is based on observational, cross-sectional data, the results should not be interpreted as causal. Other factors such as seniority, committee assignments, or leadership positions may be having some influence on legislative success.</p>
 <h2 id="conclusion">Conclusion</h2>
-<p>Overall, the results provide strong support for my hypothesis that members of the majority party are more legislatively effective than those in the minority party. Both the graphical analysis and regression results show that majority-party members pass more bills per congressional term, on average, than minority-party members. The regression coefficient indicates that majority-party members pass approximately 2.85 more bills per member per term, and this relationship is statistically significant, suggesting that the difference is not due to random chance.</p>
+<p>Overall, the results provide strong support for my hypothesis that members of the majority party are more legislatively effective than those in the minority party. Both the graphical analysis and regression results show that majority-party members pass more bills per congressional term, on average, than minority-party members. The regression coefficient indicates that majority-party members pass approximately 2.85 more bills per member per term, and this relationship is statistically significant, suggesting that the difference is not due to random chance. Given that most members pass relatively few bills per term, an increase of nearly three additional bills represents a substantively meaningful difference in legislative effectiveness.</p>
 <p>These findings reinforce the idea that legislative success is not just a reflection of individual effort or ability, but is shaped by the institutional structures within Congress. Majority-party members benefit from control, support, and greater access to resources, all of which increase their ability to move legislation through. As a result, power within Congress plays a central role in determining who is able to translate ideas into actual policy outcomes.</p>
 <p>However, this analysis has important limitations. Because the data is observational and cross-sectional, it is not possible to make strong causal claims about the effect of majority-party status on legislative success. Other factors, such as seniority or leadership positions may influence how many bills a member is able to pass. There could be a bias in this study.</p>
-<p>Future research could improve this analysis by incorporating additional control variables, such as years in office, to better isolate the effect of majority-party status. Or, we could also explore whether this relationship differs between the House and Senate. Together, these additions would not only strengthen the analysis, but also deepen our understanding of how power operates within Congress.</p>
+<p>Future research could improve this analysis by incorporating additional control variables, such as years in office, to better isolate the effect of majority-party status. Or, we could also explore whether this relationship differs between the House and Senate. Together, these additions would not only strengthen the analysis, but also deepen our understanding of how power operates within Congress. In conclusion, these findings suggest that legislative success in Congress is not only a function of individual effort, but is deeply shaped by institutional structures that determine who has the power to govern effectively.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
@@ -1694,11 +1671,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_discrete.html'>scale_x_discrete</a></span><span class='op'>(</span>labels <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"0"</span> <span class='op'>=</span> <span class='st'>"Minority"</span>, <span class='st'>"1"</span> <span class='op'>=</span> <span class='st'>"Majority"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
 <span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span></span>
 <span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://broom.tidymodels.org/'>broom</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://modelsummary.com'>modelsummary</a></span><span class='op'>)</span></span>
 <span><span class='va'>model_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>`Number of bills becoming law`</span> <span class='op'>~</span> <span class='va'>`1 = majority party`</span>, data <span class='op'>=</span> <span class='va'>congress</span><span class='op'>)</span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='va'>model_1</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+<span><span class='fu'><a href='https://modelsummary.com/man/modelsummary.html'>modelsummary</a></span><span class='op'>(</span><span class='va'>model_1</span><span class='op'>)</span></span></code></pre>
 </div>
 </div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
