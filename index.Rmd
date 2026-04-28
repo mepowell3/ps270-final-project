@@ -83,6 +83,7 @@ library(broom)
 library(modelsummary)
 model_1 <- lm(`Number of bills becoming law` ~ `1 = majority party`, data = congress)
 modelsummary(model_1)
+
 ```
 
 ### Regression Analysis
@@ -93,11 +94,11 @@ The estimated effect is statistically significant (p < 0.001), indicating that t
 ## Conclusion
 Overall, the results provide strong support for my hypothesis that members of the majority party are more legislatively effective than those in the minority party. Both the graphical analysis and regression results show that majority-party members pass more bills per congressional term, on average, than minority-party members. The regression coefficient indicates that majority-party members pass approximately 2.85 more bills per member per term, and this relationship is statistically significant, suggesting that the difference is not due to random chance. Given that most members pass relatively few bills per term, an increase of nearly three additional bills represents a substantively meaningful difference in legislative effectiveness.
 
-These findings reinforce the idea that legislative success is not just a reflection of individual effort or ability, but is shaped by the institutional structures within Congress. Majority-party members benefit from control, support, and greater access to resources, all of which increase their ability to move legislation through. As a result, power within Congress plays a central role in determining who is able to translate ideas into actual policy outcomes.
+These findings illustrate the idea that legislative success is not just a reflection of individual effort or ability, but is shaped by the institutional structures within Congress. Majority-party members benefit from control, support, and greater access to resources, all of which increase their ability to move legislation through. As a result, power within Congress plays a central role in determining who is able to translate ideas into actual policy outcomes.
 
 However, this analysis has important limitations. Because the data is observational and cross-sectional, it is not possible to make strong causal claims about the effect of majority-party status on legislative success. Other factors, such as seniority or leadership positions may influence how many bills a member is able to pass. There could be a bias in this study.
 
-Future research could improve this analysis by incorporating additional control variables, such as years in office, to better isolate the effect of majority-party status. Or, we could also explore whether this relationship differs between the House and Senate. Together, these additions would not only strengthen the analysis, but also deepen our understanding of how power operates within Congress. In conclusion, these findings suggest that legislative success in Congress is not only a function of individual effort, but is deeply shaped by institutional structures that determine who has the power to govern effectively.
+Future research could improve this analysis by incorporating additional control variables, such as years in office, to better isolate the effect of majority-party status. Or, we could also explore whether this relationship differs between the House and Senate. Together, these additions would not only strengthen the analysis, but also deepen our understanding of how power operates within Congress. In conclusion, these findings suggest that legislative success in Congress is not only a function of individual effort, but is deeply shaped by institutional structures that determine who has the power to govern effectively but could also be strength throw more analysis.
 
 ```{r print-code, ref.label=knitr::all_labels(), echo = TRUE, eval=FALSE}
 
