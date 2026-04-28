@@ -73,7 +73,7 @@ ggplot(laws_passed, aes(x = factor(`1 = majority party`), y = avg_bills)) +
   theme_minimal()
 ```
 #### Write Up
-The figure shows that members of the majority party pass more bills, on average, per congressional term than members of the minority party. This pattern is consistent with my hypothesis that institutional advantages—such as agenda control, leadership support, and access to legislative resources—allow majority-party members to more effectively move legislation through Congress. While the difference appears meaningful, regression analysis is needed to determine the magnitude and statistical significance of this relationship.
+The figure shows that members of the majority party pass more bills, on average, per congressional term than members of the minority party. This pattern is consistent with my hypothesis that institutional advantages, such as agenda control and leadership support, allow majority-party members to more effectively move legislation through Congress. 
 
 
 ### Regression
