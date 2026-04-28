@@ -66,7 +66,7 @@ ggplot(laws_passed, aes(x = factor(`1 = majority party`), y = avg_bills)) +
   labs(
     title = "Legislative Success by Majority-Party Status",
     x = "Party Status (Majority vs Minority)",
-    y = "Average Number of Bills Becoming Law per Member per Term",
+    y = "Average Number of Bills Becoming Law\nper Member per Term",
     fill = "Party Status"
   ) +
   scale_x_discrete(labels = c("0" = "Minority", "1" = "Majority")) +
